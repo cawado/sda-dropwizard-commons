@@ -18,6 +18,7 @@ dependencies {
     compile project(':sda-commons-server-kafka-testing')
     compile project(':sda-commons-server-mongo-testing')
     compile project(':sda-commons-server-morphia')
+    compile project(':sda-commons-server-openapi')
     compile project(':sda-commons-server-prometheus')
     compile project(':sda-commons-server-s3')
     compile project(':sda-commons-server-s3-testing')

@@ -1,0 +1,24 @@
+dependencies {
+    compile project(':sda-commons-server-dropwizard')
+
+    compile 'io.swagger.core.v3:swagger-jaxrs2:2.0.7'
+    compile 'io.swagger.core.v3:swagger-jaxrs2-servlet-initializer:2.0.7'
+
+    // TODO: swagger-hal is not supported in the latest version, maybe we have to write our own serializer
+    /*compile 'io.openapitools.hal:swagger-hal:1.0.4', {
+        exclude group: 'io.openapitools.jackson.dataformat', module: 'jackson-dataformat-hal'
+        exclude group: 'io.swagger', module: 'swagger-jaxrs'
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }*/
+
+    compile 'io.openapitools.jackson.dataformat:jackson-dataformat-hal:1.0.4', {
+        exclude group: 'com.fasterxml.jackson.jaxrs', module: 'jackson-jaxrs-json-provider'
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+
+    //compile 'org.slf4j:slf4j-api:' + slf4jVersion
+
+    testCompile project(':sda-commons-server-testing')
+    testCompile 'io.swagger.parser.v3:swagger-parser:2.0.11'
+    testCompile 'net.javacrumbs.json-unit:json-unit-assertj:2.2.0'
+}
