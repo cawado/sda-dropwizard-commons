@@ -3,6 +3,7 @@ package org.sdase.commons.server.morphia.example;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import dev.morphia.Datastore;
+import org.assertj.core.internal.FieldByFieldComparator;
 import org.bson.Document;
 import org.junit.Before;
 import org.junit.ClassRule;
@@ -50,7 +51,9 @@ public class MorphiaApplicationIT {
    public void shouldStoreCarEntity() {
       addData();
       assertThat(datastore.createQuery(Car.class).count()).isEqualTo(2);
-      assertThat(datastore.createQuery(Car.class).find()).usingFieldByFieldElementComparator().contains(WL, HH);
+      assertThat(datastore.createQuery(Car.class).find().toList())
+            .usingFieldByFieldElementComparator()
+            .contains(WL, HH);
    }
 
    @Test
