@@ -31,12 +31,12 @@ will scan resources in the package of the application class.
 
 ### Documentation Location
  
-The Swagger documentation base path is dependant on DropWizard's [server.rootPath](https://www.dropwizard.io/0.9.1/docs/manual/configuration.html#man-configuration-all):
+The Swagger documentation base path is dependant on DropWizard's [`server.rootPath`](https://www.dropwizard.io/0.9.1/docs/manual/configuration.html#man-configuration-all):
 
 - as JSON: ```<server.rootPath>/swagger.json``` 
 - as YAML: ```<server.rootPath>/swagger.yaml```
 
-### Customizaton Options
+### Customization Options
 
 The API title:
 
@@ -107,7 +107,7 @@ SwaggerBundle.builder()
 ### Note
 
 The customizations above take precedence over the corresponding ones from
-[@SwaggerDefinition(@Info)](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#info)
+[`@SwaggerDefinition(@Info)`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#info)
 
 ## Further Information
 
@@ -117,15 +117,15 @@ The customizations above take precedence over the corresponding ones from
  
 ## Example
  
-_config.yml_ -
-[server.rootPath](https://www.dropwizard.io/0.9.1/docs/manual/configuration.html#man-configuration-all)
+_`config.yml`_ -
+[`server.rootPath`](https://www.dropwizard.io/0.9.1/docs/manual/configuration.html#man-configuration-all)
 
 ```yaml
 server:
   rootPath: "/api/*"
 ```
   
-_ExampleApp.java_
+_`ExampleApp.java`_
 ```java
 package package org.example.person.app;
 
@@ -154,8 +154,8 @@ public class ExampleApp extends Application<Configuration> {
 }
 ```
 
-_Api.java_ -
-[@SwaggerDefinition](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#swaggerdefinition)
+_`Api.java`_ -
+[`@SwaggerDefinition`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#swaggerdefinition)
 
 ```java
 package package org.example.person.api;
@@ -167,10 +167,10 @@ public class Api {}
 ```
 
 _PersonService.java_ -
-[@Api](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#api),
-[@ApiOperation](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apioperation),
-[@ApiImplicitParams](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apiimplicitparam-apiimplicitparams),
-[@ApiResponses](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apiresponses-apiresponse)
+[`@Api`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#api),
+[`@ApiOperation`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apioperation),
+[`@ApiImplicitParams`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apiimplicitparam-apiimplicitparams),
+[`@ApiResponses`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apiresponses-apiresponse)
 
 ```java
 package package org.example.person.api;
@@ -196,9 +196,9 @@ public interface PersonService {
 }
 ```
 
-_PersonResource.java_ -
-[@ApiModel](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apimodel),
-[@ApiModelProperty](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apimodelproperty)
+_`PersonResource.java`_ -
+[`@ApiModel`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apimodel),
+[`@ApiModelProperty`](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X#apimodelproperty)
 
 ```java
 @Resource

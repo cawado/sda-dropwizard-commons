@@ -5,7 +5,7 @@ of SDA SE services. It also provides support for linking resources with HAL and 
 client request.
 
 The [`JacksonConfigurationBundle`](./src/main/java/org/sdase/commons/server/jackson/JacksonConfigurationBundle.java) is
-used to configure the Json serializer. It adds various error mappers to support the SDA error message standard. These
+used to configure the JSON serializer. It adds various error mappers to support the SDA error message standard. These
 replace the default Dropwizard error mappers but also additional new mappers are added, e.g. mapping JaxRs Exceptions, 
 such as NotFound and NotAuthorized. All mappers do log the errors when mapping.
 
@@ -66,7 +66,7 @@ It is strongly recommended to use
 - `Duration` for durations with time resolution
 - `Period` for durations with day resolution
 
-All these types can be read and written in Json as ISO 8601 formats. `ZonedDateTime` is formatted with milliseconds or 
+All these types can be read and written in JSON as ISO 8601 formats. `ZonedDateTime` is formatted with milliseconds or 
 nanoseconds according to the detail set in the instance.
 
 | Type            | Resolution    | Example                         |
@@ -110,7 +110,7 @@ resource class and are annotated as `@Link`. Embedded resources can be added as 
 [Open API Tools](https://github.com/openapi-tools/jackson-dataformat-hal) are used to render them in appropriate 
 `_links` and `_embedded` properties. Links are properly documented in Swagger when `io.openapitools.hal:swagger-hal` is
 added to the dependencies. `io.openapitools.hal:swagger-hal` is shipped with 
-[sda-commons-server-swagger](../sda-commons-server-swagger/README.md).
+[`sda-commons-server-swagger`](../sda-commons-server-swagger/README.md).
 
 HAL link support may be disabled in the `JacksonConfigurationBundle.builder()`.
 
@@ -214,14 +214,14 @@ JacksonConfigurationBundle.builder()
     .build();
 ```
 
-### Yaml
+### YAML
 
 If the `JacksonYAMLProvider` is available in the classpath, it will be registered to support requests that 
 `Accept application/yaml`. This is especially useful for Swagger which provides the `swagger.json` also as 
 `swagger.yaml`.
 
 To activate Yaml support, a dependency to `com.fasterxml.jackson.jaxrs:jackson-jaxrs-yaml-provider` has to be added. It
-is shipped in an appropriate version with [sda-commons-server-swagger](../sda-commons-server-swagger/README.md).
+is shipped in an appropriate version with [`sda-commons-server-swagger`](../sda-commons-server-swagger/README.md).
 
 ## Error Format
 Exceptions are mapped to a common error format that looks like the following example
@@ -253,4 +253,4 @@ For validation errors, the invalidParams section is filled. For other errors, ju
 The reason might be in different language due to internationalization.
 
 Examples how exceptions and the error structure should be used, can be found within the example project 
-[sda-commons-server-errorhandling-example](../sda-commons-server-errorhandling-example/README.md)
+[`sda-commons-server-errorhandling-example`](../sda-commons-server-errorhandling-example/README.md)

@@ -10,15 +10,15 @@ It includes the dependencies to [sda-commons-server-kafka](../sda-commons-server
 
 For Avro, the following libraries are included
 
-| Group            | Artifact           | Version |
-|------------------|--------------------|---------|
-| io.confluent | kafka-avro-serializer | 4.1.2 |
+| Group            | Artifact                | Version |
+|------------------|-------------------------|---------|
+| `io.confluent`   | `kafka-avro-serializer` | 4.1.2   |
 
 
 ## Usage of WrappedAvroDeserializer
 The WrappedAvroDeserializer is a small builder that can be used to create a wrapped KafkaAvroDeserializer. The KafkaAvroDeserializer throws a Serialization exception
 in case if any problems which can trigger a known problem in the latest Kafka consumer API. The wrapped deserializer can be used to avoid this exception and returns a
-null value instead (key/value). The client MessageHandler implementation has to take care of possible nul values and can react in a proper way.  
+null value instead (key/value). The client MessageHandler implementation has to take care of possible null values and can react in a proper way.  
 
 ```
    ConsumerConfig config = new ConsumerConfig();

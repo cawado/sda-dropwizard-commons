@@ -5,7 +5,7 @@ correlate a set of service invocations that belongs to the same logically cohesi
 the SDA platform, e.g. interaction service. 
 
 Every service must forward the received trace token within calls to other services that are part of the SDA platform. In
-HTTP REST calls, it is done within the HTTP Header  as `Trace-Token`. 
+HTTP REST calls, it's done within the HTTP Header  as `Trace-Token`. 
 
 If no token is provided within the request, it will be generated automatically and put into the 
 request context. This should be only the case, if a service call firstly enters the SDA platform.
