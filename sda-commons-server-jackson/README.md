@@ -25,7 +25,7 @@ and enables
 [`ACCEPT_SINGLE_VALUE_AS_ARRAY`](https://static.javadoc.io/com.fasterxml.jackson.core/jackson-databind/2.9.7/com/fasterxml/jackson/databind/DeserializationFeature.html#ACCEPT_SINGLE_VALUE_AS_ARRAY),
 [`READ_UNKNOWN_ENUM_VALUES_AS_NULL`](https://static.javadoc.io/com.fasterxml.jackson.core/jackson-databind/2.9.7/com/fasterxml/jackson/databind/DeserializationFeature.html#READ_UNKNOWN_ENUM_VALUES_AS_NULL), 
 [`READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE`](https://static.javadoc.io/com.fasterxml.jackson.core/jackson-databind/2.9.7/com/fasterxml/jackson/databind/DeserializationFeature.html#READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE).
-The `FuzzyEnumModule` from Dropwizard is removed as it lacks support of newer Jackson features for enums.
+The `FuzzyEnumModule` from Dropwizard is removed as it lacks support of newer Jackson features for enumerations.
 
 
 ## Usage
@@ -37,7 +37,7 @@ import JacksonConfigurationBundle;
 import io.dropwizard.Application;
 
 public class MyApplication extends Application<MyConfiguration> {
-   
+    
     public static void main(final String[] args) {
         new MyApplication().run(args);
     }
@@ -220,7 +220,7 @@ If the `JacksonYAMLProvider` is available in the classpath, it will be registere
 `Accept application/yaml`. This is especially useful for Swagger which provides the `swagger.json` also as 
 `swagger.yaml`.
 
-To activate Yaml support, a dependency to `com.fasterxml.jackson.jaxrs:jackson-jaxrs-yaml-provider` has to be added. It
+To activate YAML support, a dependency to `com.fasterxml.jackson.jaxrs:jackson-jaxrs-yaml-provider` has to be added. It
 is shipped in an appropriate version with [`sda-commons-server-swagger`](../sda-commons-server-swagger/README.md).
 
 ## Error Format

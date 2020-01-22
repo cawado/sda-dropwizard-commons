@@ -67,7 +67,7 @@ extended to add application specific configuration properties.
 The `config.yaml` of the 
 [`SdaPlatformConfiguration`](./src/main/java/org/sdase/commons/server/starter/SdaPlatformConfiguration.java) supports
 configuration of [authentication](../sda-commons-server-auth/README.md) and [CORS](../sda-commons-server-cors/README.md)
-additionally to the defaults of Dropwizards `Configuration`:
+additionally to the defaults of Dropwizard's `Configuration`:
 
 ```yaml
 

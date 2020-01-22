@@ -224,7 +224,7 @@ The module [`sda-commons-shared-yaml`](./sda-commons-shared-yaml/README.md) adds
 
 ### Client
 
-All modules prefixed with `sda-commons-client-` provide support for applications that use a Http client to access other
+All modules prefixed with `sda-commons-client-` provide support for applications that use a HTTP client to access other
 services.
 
 

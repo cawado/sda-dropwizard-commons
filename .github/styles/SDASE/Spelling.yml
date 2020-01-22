@@ -1,4 +1,4 @@
 extends: spelling
 message: "Did you really mean '%s'?"
 level: error
-ignore: .github/styles/ignore-dictionary.txt
+ignore: .github/styles/SDASE/ignore-dictionary.txt

@@ -1,7 +1,7 @@
 # SDA Commons error handling example
 
 The SDA commons libraries provide support to generate the common error structures as described in the REST guide. This 
-implementation is part of the [sda-commons-server-jackson](../sda-commons-server-jackson/README.md#error-format) bundle.
+implementation is part of the [`sda-commons-server-jackson`](../sda-commons-server-jackson/README.md#error-format) bundle.
 
 The default way to inform clients about errors, exceptions should be thrown. These exceptions are mapped to the 
 common error structure using JAX-RS exception mapper (`javax.ws.rs.ext.ExceptionMapper`) automatically, if the Jackson bundle 

@@ -34,7 +34,7 @@ public class MyApplication extends Application<MyConfiguration> {
 ```
 
 The `ClientFactory` is able to create Jersey clients from interfaces defining the API with JAX-RS annotations. It may 
-also create generic Jersey clients that can build the request definition with a fluent api:
+also create generic Jersey clients that can build the request definition with a fluent API:
 
 ```java
 Client googleClient = clientFactory.externalClient()
@@ -104,7 +104,7 @@ wrapping `javax.ws.rs.ProcessingException` or subclasses of `javax.ws.rs.WebAppl
 If the `ClientRequestException` exception is handled in the application code **the application must `close()` the 
 exception**.
 
-If a `javax.ws.rs.core.Response` is defined as return type, Http errors and redirects can be read from the `Response`
+If a `javax.ws.rs.core.Response` is defined as return type, HTTP errors and redirects can be read from the `Response`
 object. **Remember to always close the `Response` object. It references open socket streams.**
 
 In both variants a `java.net.ConnectException` may be thrown if the client can't connect to the server.
@@ -158,7 +158,7 @@ The client is the configured automatically to support multipart.
 
 The clients used in sda-commons require the Jersey Client implementation. 
 If you are facing problems with other `javax.ws.rs-api` implementations in the classpath (e.g. RestEasy which comes
-with the Keycloak SDK) the Jersey Client Builder must be propagated in your project as service.
+with the KeyCloak SDK) the Jersey Client Builder must be propagated in your project as service.
 Therefore the service definition `src/main/resources/META-INF/services/javax.ws.rs.client.ClientBuilder` must be added
 to your project containing:
 

@@ -13,3 +13,6 @@ WireMock
 embeddable
 Servlets
 Clickjacking
+deserialization
+validator
+serializer

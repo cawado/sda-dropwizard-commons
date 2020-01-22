@@ -4,8 +4,8 @@ The module `sda-commons-server-prometheus` provides
 
 - an admin endpoint to serve metrics in a format that Prometheus can read. The endpoint is available at the applications 
   admin port at `/metrics/prometheus`
-- an admin endpoint te server Health Check results as prometheus metrics. The endpoint is available at the applications 
-   admin port at `/healthcheck/prometheus`
+- an admin endpoint to serve health check results as Prometheus metrics. The endpoint is available at the applications 
+  admin port at `/healthcheck/prometheus`
 
 ## Provided metrics
 

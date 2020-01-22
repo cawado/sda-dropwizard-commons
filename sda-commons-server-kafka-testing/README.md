@@ -8,9 +8,9 @@ For Kafka based tests, the following libraries are included
 
 | Group            | Artifact           | Version |
 |------------------|--------------------|---------|
-| com.salesforce.kafka.test | kafka-junit4 | 3.0.1 |
-| org.apache.kafka | kafka_2.12 | 1.1.1|
-| org.awaitility | awaitility | 3.1.2 |
+| `com.salesforce.kafka.test` | `kafka-junit4` | 3.0.1 |
+| `org.apache.kafka` | `kafka_2.12` | 1.1.1|
+| `org.awaitility` | `awaitility` | 3.1.2 |
 
 kafka-junit4 does not depend on a fixed kafka broker version. The kafka must be included in the used version within an dedicated dependency.
 Currently, the kafka version 1.1.1 with scala version 2.12 is used.
@@ -29,7 +29,7 @@ protected static final SharedKafkaTestResource KAFKA = new SharedKafkaTestResour
 The usage of random ports allows to execute tests in parallel and reduce the probability of port conflicts, e.g. when local-infra is also started.  
 
 The example above, starts two kafka brokers within a cluster. To test your application, you have to configure these servers as 
-bootstrap servers. This is normally done via the configuration yaml file within the property kafka -> brokers.
+bootstrap servers. This is normally done via the configuration YAML file within the property kafka -> brokers.
 
 By using the following snippets, the broker urls are passed to the application.  
 

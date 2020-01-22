@@ -109,7 +109,7 @@ database:
 ```
 
 In tests the config is derived from the `MongoDbRule`. See 
-[sda-commons-server-mongo-testing](../sda-commons-server-mongo-testing/README.md) for details.
+[`sda-commons-server-mongo-testing`](../sda-commons-server-mongo-testing/README.md) for details.
 
 
 ### Health check
@@ -121,4 +121,4 @@ A simple _ping_ command to the database is used.
 ## Testing
 
 For testing database access with Morphia we suggest to use 
-[sda-commons-mongo-testing](../sda-commons-server-mongo-testing) module.
+[`sda-commons-mongo-testing`](../sda-commons-server-mongo-testing) module.
