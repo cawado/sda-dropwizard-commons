@@ -114,7 +114,7 @@ and are aligned to the versions provided by `sda-commons-server-dropwizard`. It 
 require no additional dependencies.
 
 
-##### Healthcheck
+##### Health Check
 The module [`sda-commons-server-healthcheck`](./sda-commons-server-healthcheck/README.md) introduces the possibility
 to distinguish internal and external health checks.
 
@@ -205,7 +205,7 @@ in the SDA SE infrastructure.
 
 The module [`sda-commons-server-trace`](./sda-commons-server-trace/README.md) adds support to track create a 
 trace token to correlate  a set of service invocations that belongs to the same logically cohesive call of a higher 
-level service offered by the SDA platform, e.g. interaction service. . 
+level service offered by the SDA Platform, e.g. interaction service. . 
 
 
 ##### Weld
@@ -231,7 +231,7 @@ services.
 #### Jersey
 
 The module [`sda-commons-client-jersey`](./sda-commons-client-jersey/README.md) provides support for using Jersey 
-clients withing the dropwizard application.
+clients withing the Dropwizard application.
 
 The module [`sda-commons-client-jersey-wiremock-testing`](./sda-commons-client-jersey-wiremock-testing/README.md) 
 bundles the [WireMock](https://wiremock.org) dependencies to mock services in integration tests consistently to 
