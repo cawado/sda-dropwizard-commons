@@ -254,7 +254,7 @@ kafka:
       pollInterval: 200
 ```
 
-### configuration value defaults (extending/changing the kafka defaults)
+### Configuration value defaults (extending/changing the Kafka defaults)
 This are only the defaults that are explicitly set within the code of the bundle. All other properties depends on the actual broker configuration or the Kafka defaults are used. 
 
 | Key | Value |
