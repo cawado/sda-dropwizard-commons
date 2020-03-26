@@ -156,11 +156,13 @@ The OPA bundle requests the policy decision providing the following inputs
  * HTTP path as Array
  * HTTP method as String
  * validated JWT (if available) 
- * all request headers 
+ * configured request headers (default: all)
+ * configured reuquest query parameters (default none)
+ * configured reuquest body parameters, if the mediaType is JSON (default none)
  
-_Remark to HTTP request headers:_  
-The bundle normalizes  header names to lower case to simplify handling in OPA since HTTP specification defines header names as case insensitive.
-Multivalued headers are not normalized with respect to the representation as list or single string with separator char.
+_Remark to HTTP request parameters:_  
+The bundle normalizes parameter names to lower case to simplify handling in OPA since HTTP specification defines header names as case insensitive.
+Multivalued parameter values are not normalized with respect to the representation as list or single string with separator char.
 They are forwarded as parsed by the framework. 
   
 
@@ -185,14 +187,20 @@ allow {
     # allow if 'claim' exists in the JWT payload
     token.payload.claim
 
-    # allow if a request header 'HttpRequestHeaderName' has a certain value 
-    input.headers["httprequestheadername"][_] == "certain-value" 
+    # allow if a request header 'HttpRequestHeaderName' has a certain value
+    input.headers["httprequestheadername"][_] == "certain-value"
+
+    # allow if a request query 'HttpRequestQueryName' has a certain value
+    input.queries["httprequestqueryname"][_] == "certain-value"
+
+    # allow if a request header 'HttpRequestBodyName' has a certain value
+    input.bodies["httprequestbodyname"][_] == "certain-value"
 }
 ```
 
 The response consists of two parts, the overall `allow` decision and optional rules that represent constraints to limit data access
 within the service. The constraints are fully service dependent and MUST be applied when querying the database or
-filtering received data. 
+filtering received data.
 
 The following listing presents a sample OPA result with a positive allow decision and two constraints, the first with boolean value and second
 with a list of string values.
@@ -289,6 +297,26 @@ opa:
   policyPackage: http.authz
   # readTimeout for OPA requests in millis, default 500
   readTimeout: 500
+```
+
+The config cna be extended by setting specific or wildcard parameters for request headers, queries and/or 
+body parameters.
+Example config:
+```yaml
+opa:
+  ...
+  # Include specific headers (Default: all) or all ("*")
+  include-header-parameter:
+  - header1
+  - header2
+  # Include specific queries (Default: none) or all ("*")
+  include-query-parameter:
+  - query1
+  # Include specific body parameters (Default: none) or all ("*")
+  include-body-parameter:
+  - body1
+  - body2
+...
 ```
 
 The config may be filled from environment variables if the
