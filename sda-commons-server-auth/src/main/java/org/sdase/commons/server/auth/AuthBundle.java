@@ -37,7 +37,7 @@ public class AuthBundle<T extends Configuration> implements ConfiguredBundle<T> 
   private final Tracer tracer;
 
   public static ProviderBuilder builder() {
-    return new Builder();
+    return new Builder<>();
   }
 
   private AuthBundle(
