@@ -1,7 +1,5 @@
 package org.sdase.commons.server.opa.filter.model;
 
-import javax.ws.rs.core.MultivaluedMap;
-
 public class OpaRequest {
 
   private OpaInput input;
@@ -10,7 +8,7 @@ public class OpaRequest {
     // nothing here
   }
 
-  private OpaRequest(OpaInput input) {
+  OpaRequest(OpaInput input) {
     this.input = input;
   }
 
@@ -23,12 +21,12 @@ public class OpaRequest {
     return this;
   }
 
-  public static OpaRequest request(
-      String jwt,
-      String[] path,
-      String method,
-      String traceToken,
-      MultivaluedMap<String, String> headers) {
-    return new OpaRequest(new OpaInput(jwt, path, method, traceToken, headers));
+  public static OpaRequestBuilder builder() {
+    return new OpaRequestBuilder();
+  }
+
+  @Override
+  public String toString() {
+    return "OpaRequest [input=" + input + "]";
   }
 }

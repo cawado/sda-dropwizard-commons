@@ -1,7 +1,16 @@
 package org.sdase.commons.server.opa.filter.model;
 
-import javax.ws.rs.core.MultivaluedMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
+/**
+ * TODO: Discussion: rename parameter to clarify the meaning - headers => headerParameter - bodies
+ * => bodyParameter - queries => queryParameter
+ */
+@JsonInclude(Include.NON_NULL)
 public class OpaInput {
 
   /** trace token to be able to find opa debug */
@@ -16,24 +25,26 @@ public class OpaInput {
   /** HTTP Method */
   private String httpMethod;
 
-  /** Additional, optional headers that get passed to the OPA service. */
-  private MultivaluedMap<String, String> headers;
+  /**
+   * Additional, optional headers that get passed to the OPA service, if configured Default: all
+   * parameters
+   */
+  private Map<String, List<String>> headers;
+
+  /**
+   * Additional, optional body parameters that get passed to the OPA service, if configured Default:
+   * all parameters
+   */
+  private Map<String, Object> bodies;
+
+  /**
+   * Additional, optional headers that get passed to the OPA service, if configured Default: all
+   * parameters
+   */
+  private Map<String, List<String>> queries;
 
   public OpaInput() {
     // nothing here, just for Jackson
-  }
-
-  OpaInput(
-      String jwt,
-      String[] path,
-      String httpMethod,
-      String traceToken,
-      MultivaluedMap<String, String> headers) {
-    this.jwt = jwt;
-    this.path = path;
-    this.httpMethod = httpMethod;
-    this.trace = traceToken;
-    this.headers = headers;
   }
 
   public String getJwt() {
@@ -72,12 +83,50 @@ public class OpaInput {
     return this;
   }
 
-  public MultivaluedMap<String, String> getHeaders() {
+  public Map<String, List<String>> getHeaders() {
     return headers;
   }
 
-  public OpaInput setHeaders(MultivaluedMap<String, String> headers) {
-    this.headers = headers;
+  public OpaInput setHeaders(Map<String, List<String>> headerParameter) {
+    this.headers = headerParameter;
     return this;
+  }
+
+  public Map<String, Object> getBodies() {
+    return bodies;
+  }
+
+  public OpaInput setBodies(Map<String, Object> bodyParameter) {
+    this.bodies = bodyParameter;
+    return this;
+  }
+
+  public Map<String, List<String>> getQueries() {
+    return queries;
+  }
+
+  public OpaInput setQueries(Map<String, List<String>> queryParameter) {
+    this.queries = queryParameter;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return "OpaInput ["
+        + "bodyParameter="
+        + bodies
+        + ", headerParameter="
+        + headers
+        + ", httpMethod="
+        + httpMethod
+        + ", jwt="
+        + jwt
+        + ", path="
+        + Arrays.toString(path)
+        + ", queryParameter="
+        + queries
+        + ", trace="
+        + trace
+        + "]";
   }
 }

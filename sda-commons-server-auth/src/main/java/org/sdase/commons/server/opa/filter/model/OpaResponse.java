@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class OpaResponse {
-  private static final String ALLOW = "allow";
+  public static final String ALLOW = "allow";
 
   private JsonNode result;
 
@@ -23,5 +23,10 @@ public class OpaResponse {
       return result.get(ALLOW).asBoolean();
     }
     return false;
+  }
+
+  @Override
+  public String toString() {
+    return "OpaResponse [result=" + result + "]";
   }
 }
